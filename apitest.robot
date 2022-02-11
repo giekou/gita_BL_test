@@ -9,8 +9,6 @@ GET_andValidateDataType
 # This is for setup connection to API
     create session      mysession           ${base_url}
     ${response}=        get on session      mysession       /posts
-#    ${typeInteger}=         Evaluate            type(${response.json()[0]['title']}).__name__
-#    log to console      ${typeInteger}
 
 #This is for Validate Response Data Type
     ${validateUserId}=          Evaluate            isinstance(${response.json()[0]['userId']}, int)
